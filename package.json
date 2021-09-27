@@ -1,6 +1,6 @@
 {
   "name": "@icatjs/micro",
-  "version": "0.1.0",
+  "version": "0.1.0-rc.0",
   "description": "",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
@@ -10,7 +10,8 @@
     "test": "rimraf coverage && jest --coverage",
     "build": "rimraf lib && rollup -c",
     "build:w": "npm run build -- -w",
-    "pub": "npm run build && npm publish --access public"
+    "pub": "npm run build && npm publish --access public",
+    "pub:next": "npm run pub --tag=next"
   },
   "dependencies": {
     "@satumjs/core": "~0.0.4",
