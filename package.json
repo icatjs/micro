@@ -1,6 +1,6 @@
 {
   "name": "@icatjs/micro",
-  "version": "0.1.0-rc.0",
+  "version": "0.1.0-rc.1",
   "description": "",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
@@ -14,11 +14,11 @@
     "pub:next": "npm run pub --tag=next"
   },
   "dependencies": {
-    "@satumjs/core": "~0.0.4",
-    "@satumjs/midware-interceptor": "~0.0.1",
-    "@satumjs/midware-microcode": "~0.0.1",
-    "@satumjs/midware-sandbox": "~0.0.1",
-    "@satumjs/midware-single-spa": "~0.0.4"
+    "@satumjs/core": "latest",
+    "@satumjs/midware-interceptor": "latest",
+    "@satumjs/midware-microcode": "latest",
+    "@satumjs/midware-sandbox": "latest",
+    "@satumjs/midware-single-spa": "latest"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
