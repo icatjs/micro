@@ -7,8 +7,6 @@ import interceptorMidware from '@satumjs/midware-interceptor';
 type StartOptions = { [key: string]: any };
 
 use(singleSpaMidware, { timeout: 5 * 60 * 1000 });
-use(sandboxMidware, { loose: true });
-use(microCodeMidware);
 use(interceptorMidware);
 
 use((system, microApps, next) => {
@@ -28,13 +26,15 @@ use((system, microApps, next) => {
 });
 
 function start(options?: StartOptions) {
-  const { processUrlOption, ...restOptions } = options || {};
+  const { processUrlOption, isVite, ...restOptions } = options || {};
   if (processUrlOption) {
     use((system, _, next) => {
       system.set('processUrlOption', processUrlOption);
       next();
     });
   }
+  use(sandboxMidware, isVite ? undefined : { loose: true });
+  use(microCodeMidware, isVite ? { simple: true, ableLocationProxy: true } : { simple: true });
   coreStart(restOptions);
 }
 
