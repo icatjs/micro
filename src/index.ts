@@ -3,11 +3,13 @@ import singleSpaMidware from '@satumjs/midware-single-spa';
 import sandboxMidware from '@satumjs/midware-sandbox';
 import microCodeMidware from '@satumjs/midware-microcode';
 import interceptorMidware from '@satumjs/midware-interceptor';
+import cacheCodeMidware from '@satumjs/midware-cachecode';
 
 type StartOptions = { [key: string]: any };
 
 use(singleSpaMidware, { timeout: 5 * 60 * 1000 });
 use(interceptorMidware);
+use(cacheCodeMidware, { softCache: true });
 
 use((system, microApps, next) => {
   system.set('proxyEntry', (entry: string | string[], appName: string) => {

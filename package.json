@@ -1,6 +1,6 @@
 {
   "name": "@icatjs/micro",
-  "version": "0.1.0-rc.2",
+  "version": "0.1.0-rc.3",
   "description": "",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@satumjs/core": "latest",
+    "@satumjs/midware-cachecode": "latest",
     "@satumjs/midware-interceptor": "latest",
     "@satumjs/midware-microcode": "latest",
     "@satumjs/midware-sandbox": "latest",
